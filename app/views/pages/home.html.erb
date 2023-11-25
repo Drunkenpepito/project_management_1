@@ -1,0 +1,11 @@
+<br>
+<main class="bg-blue-100 border border-blue-800  text-blue-800 text-center mx-auto p-4	">
+  <h1 class="text-xl">PROJECTS EDITOR</h1>
+  <p class= "text-sm text-red-300 m-2 ">based on Francois' coaching</p>
+
+  <% if user_signed_in? %>
+    <%= link_to " PROJECTS", projects_path, class: "button bg-blue-100 border border-red-800 text-red-800 rounded p-2 m-6" %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn--dark" %>
+  <% end %>
+</main>

@@ -1,0 +1,21 @@
+<nav class=" bg-white border border-blue-800 p-2 ">
+  <% if user_signed_in? %>
+    <%= button_to "❌",
+                  destroy_user_session_path,
+                  method: :delete,
+                  class: "button text-center" 
+    %>
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 text-blue-800 text-2xl">
+      <%= current_group.name %>
+      <div class="self-center text-lg font-semibold text-blue-400 p-2">
+        <%= current_user.name   %>
+      </div>
+    </div>
+  <% else %>
+    <%= link_to "Sign in",
+                new_user_session_path,
+                class: "inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" %>
+  <% end %>
+</nav>
+
+
